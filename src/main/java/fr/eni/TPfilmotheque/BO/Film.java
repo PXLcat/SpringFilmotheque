@@ -1,11 +1,11 @@
-package BO;
+package fr.eni.TPfilmotheque.BO;
 
 import java.util.Date;
 
 public class Film {
 
 	private String titre;
-	private Date anneeSortie;
+	private int anneeSortie;
 	private int duree; //en secondes
 	private Genre genreFilm;
 	
@@ -14,7 +14,7 @@ public class Film {
 
 	}
 	
-	public Film(String titre, Date anneeSortie, int duree, Genre genreFilm) {
+	public Film(String titre, int anneeSortie, int duree, Genre genreFilm) {
 		super();
 		this.titre = titre;
 		this.anneeSortie = anneeSortie;
@@ -28,10 +28,10 @@ public class Film {
 	public void setTitre(String titre) {
 		this.titre = titre;
 	}
-	public Date getAnneeSortie() {
+	public int getAnneeSortie() {
 		return anneeSortie;
 	}
-	public void setAnneeSortie(Date anneeSortie) {
+	public void setAnneeSortie(int anneeSortie) {
 		this.anneeSortie = anneeSortie;
 	}
 	public int getDuree() {

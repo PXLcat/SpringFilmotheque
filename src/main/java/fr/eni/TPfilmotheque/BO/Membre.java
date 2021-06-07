@@ -1,4 +1,4 @@
-package BO;
+package fr.eni.TPfilmotheque.BO;
 
 import java.util.Date;
 

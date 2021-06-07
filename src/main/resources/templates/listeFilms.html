@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Liste des films</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TP filmothèque</title>
 </head>
 <body>
+<h1>Liste de films</h1>
+
+<a th:href="@{/formulaireFilms}">Ajouter un film</a>
+
+
+<div class="container">
+
+
+<h2 class="h2">Liste des films : </h2>
+<table class="table table-striped">
+	<tr>
+		<th>Titre</th><th>Année de sortie</th><th>Durée</th><th>Genre</th>
+	</tr>
+	<tr th:each="film: ${listeFilms}">
+		<td th:text="${film.titre}"></td>
+		<td th:text="${film.anneeSortie}"></td>
+		<td th:text="${film.duree}"></td>
+		<td th:text="${fil.genre.libelle}"></td>		 	
+	</tr>
+</table>
+
+
+</div>
+
+
+
 
 </body>
 </html>

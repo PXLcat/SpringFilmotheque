@@ -1,4 +1,4 @@
-package service;
+package fr.eni.TPfilmotheque.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +7,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import BO.Genre;
+import fr.eni.TPfilmotheque.BO.Genre;
 
 @Service
 public class GenreService {
@@ -17,12 +17,13 @@ public class GenreService {
 	
 	public GenreService() {
 		listeGenres = new ArrayList<>();
-		listeGenres.add(new Genre("Comédie"));
-		listeGenres.add(new Genre("Drame"));
-		listeGenres.add(new Genre("Action"));
+		listeGenres.add(new Genre("Comédie", 0));
+		listeGenres.add(new Genre("Drame", 1));
+		listeGenres.add(new Genre("Action", 2));
 		
 		mapGenres = new HashMap<Integer, Genre>();
-		listeGenres.forEach(genre -> mapGenres.put(null, genre));
+
+		listeGenres.forEach(genre -> mapGenres.put(genre.getId(), genre));
 	}
 	
 	
