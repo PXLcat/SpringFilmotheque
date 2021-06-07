@@ -25,8 +25,8 @@
 	<div class="form-group">
 		<label for="genreInput">Genre</label>
 		<select xxclass="form-select mb-2" th:field="*{genreFilm}" required>
-		  	<option th:each="genre: ${listeGenres}" 
-		  	th:value="${genre.id}" th:text="${genre.libelle}"></option>
+		  	<option th:each="genreFilm : ${listeGenres}" 
+		  	th:value="${genreFilm.id}" th:text="${genreFilm.libelle}"></option>
 		</select>	
 	</div>
 	<input class="btn btn-default" type="submit" value="Ajouter" />

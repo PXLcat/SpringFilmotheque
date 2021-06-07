@@ -22,7 +22,9 @@ public class StringToGenreConverter implements Converter<String, Genre>{
 	public Genre convert(String id) {
 		Integer theId = Integer.parseInt(id);
 		
-		return service.getMapGenres().get(theId);
+		Genre test = service.getMapGenres().get(theId);
+		
+		return test;
 		
 	}
 	
