@@ -12,18 +12,24 @@ import fr.eni.TPfilmotheque.BO.Genre;
 @Service
 public class GenreService {
 
+	//Au lieu de service, implémentation
+	
 	private List<Genre> listeGenres;
-	private Map<Integer,Genre> mapGenres;
+	private Map<Long,Genre> mapGenres;
 	
 	public GenreService() {
-		listeGenres = new ArrayList<>();
-		listeGenres.add(new Genre("Comédie", 0));
-		listeGenres.add(new Genre("Drame", 1));
-		listeGenres.add(new Genre("Action", 2));
 		
-		mapGenres = new HashMap<Integer, Genre>();
-
-		listeGenres.forEach(genre -> mapGenres.put(genre.getId(), genre));
+//		//Mettre dans un CommandLineRunner
+//		listeGenres = new ArrayList<>();
+//		listeGenres.add(new Genre("Comédie"/*, 0*/));
+//		listeGenres.add(new Genre("Drame"/*, 1*/));
+//		listeGenres.add(new Genre("Action"/*, 2*/));
+//		
+//		mapGenres = new HashMap<Long, Genre>();
+//
+//		listeGenres.forEach(genre -> mapGenres.put(genre.getId(), genre));
+//		
+//		//puis save
 	}
 	
 	
@@ -35,10 +41,10 @@ public class GenreService {
 	public void setListeGenres(List<Genre> listeGenres) {
 		this.listeGenres = listeGenres;
 	}
-	public Map<Integer,Genre> getMapGenres() {
+	public Map<Long,Genre> getMapGenres() {
 		return mapGenres;
 	}
-	public void setMapGenres(Map<Integer,Genre> mapGenres) {
+	public void setMapGenres(Map<Long,Genre> mapGenres) {
 		this.mapGenres = mapGenres;
 	}
 	

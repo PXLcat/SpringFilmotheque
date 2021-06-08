@@ -20,7 +20,7 @@ public class StringToGenreConverter implements Converter<String, Genre>{
 	
 	@Override
 	public Genre convert(String id) {
-		Integer theId = Integer.parseInt(id);
+		Long theId = Long.parseLong(id);
 		
 		Genre test = service.getMapGenres().get(theId);
 		
