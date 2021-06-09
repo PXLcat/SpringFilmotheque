@@ -13,5 +13,4 @@ public interface FilmService {
 	void ajouterFilm(Film film);
 	List<Film> findAllFilms();
 	
-
 }

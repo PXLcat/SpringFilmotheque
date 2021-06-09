@@ -12,17 +12,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import fr.eni.TPfilmotheque.BO.Film;
+import fr.eni.TPfilmotheque.dao.FilmRepository;
 import fr.eni.TPfilmotheque.service.FilmService;
 import fr.eni.TPfilmotheque.service.GenreService;
 
 
 
 @Controller
-@SessionAttributes("listeFilms")
+//@SessionAttributes("listeFilms")
 public class FilmothequeController {
 
 	private GenreService genreService;
 	private FilmService filmService;
+
 	
 	@Autowired
 	public void setGenreService(GenreService genreService) {
@@ -43,10 +45,12 @@ public class FilmothequeController {
 		return "formulaireFilms";
 	}
 	
-	@ModelAttribute("listeFilms") //TODO gérer entièrement dans le service
-	public ArrayList<Film> initListeFilms() {
-		return new ArrayList<Film>();
-	}
+//	//@ModelAttribute("listeFilms") //TODO gérer entièrement dans le service
+//	public ArrayList<Film> initListeFilms() {
+//		//return new ArrayList<Film>();
+//		ArrayList<Film> arrayListFilms = (ArrayList<Film>) filmService.findAllFilms();
+//		return arrayListFilms;
+//	}
 
 	@PostMapping("/formulaireFilms") 
 	public String ajoutFilm(@ModelAttribute("film") Film film,
@@ -58,7 +62,8 @@ public class FilmothequeController {
 	}
 
 	@GetMapping({ "/", "/listeFilms"})
-	public String afficherListeFilms() {
+	public String afficherListeFilms(Model model) {
+		model.addAttribute("listeFilms", filmService.findAllFilms());
 		return "listeFilms";
 	}
 	

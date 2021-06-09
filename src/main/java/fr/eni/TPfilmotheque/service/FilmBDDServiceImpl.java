@@ -18,18 +18,22 @@ public class FilmBDDServiceImpl implements FilmService {
 
 	private FilmRepository filmRepository;
 	
-	//GenreRepository
+	
 	
 	//@ModelAttribute("listeFilms") 
 	public ArrayList<Film> initListeFilms() {
-		return new ArrayList<Film>();
+		//return new ArrayList<Film>();
+		
+		ArrayList<Film> liste = (ArrayList<Film>) filmRepository.findAll();
+		return liste;
+		
 	}
 	
 	
 	
 	@Autowired
 	public FilmBDDServiceImpl(FilmRepository filmRepository) {
-	this.filmRepository = filmRepository;
+		this.filmRepository = filmRepository;
 	}
 	
 	@Override
@@ -47,14 +51,14 @@ public class FilmBDDServiceImpl implements FilmService {
 		return "listeFilms";
 	}
 	
-//	@PostMapping("/formulaireFilms") 
-//	public String ajoutFilm(@ModelAttribute("film") Film film,
-//			@ModelAttribute("listeFilms") List<Film> listeFilms) {
-//
-//		System.out.println("dans FilmBDDServiceImpl");
-//		listeFilms.add(film);
-//		return "redirect:/listeFilms";
-//	}
+	@PostMapping("/formulaireFilms") 
+	public String ajoutFilm(@ModelAttribute("film") Film film,
+			@ModelAttribute("listeFilms") List<Film> listeFilms) {
+
+		System.out.println("dans FilmBDDServiceImpl");
+		listeFilms.add(film);
+		return "redirect:/listeFilms";
+	}
 	
 	
 }
