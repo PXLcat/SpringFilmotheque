@@ -24,7 +24,8 @@ public class Film {
 	private int anneeSortie;
 	private int duree; //en secondes
 	
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	@ManyToOne(cascade = CascadeType.DETACH) //pas sûre que ce soit le meilleur type à prendre 
+												//mais avec persist il y avait un souci avec le genre (déjà présent dans la BDD)
     @JoinColumn(name = "genre", referencedColumnName = "id")
 	private Genre genreFilm;
 	

@@ -1,5 +1,7 @@
 package fr.eni.TPfilmotheque.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
@@ -22,7 +24,9 @@ public class StringToGenreConverter implements Converter<String, Genre>{
 	public Genre convert(String id) {
 		Long theId = Long.parseLong(id);
 		
-		Genre test = service.getMapGenres().get(theId);
+		Map<Long,Genre> map = service.getMapGenres();
+		
+		Genre test = map.get(theId);
 		
 		return test;
 		

@@ -5,7 +5,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import fr.eni.TPfilmotheque.BO.Film;
 import fr.eni.TPfilmotheque.dao.FilmRepository;
@@ -40,5 +42,19 @@ public class FilmBDDServiceImpl implements FilmService {
 		return filmRepository.findAll() ;
 	}
 
-
+	@GetMapping({ "/", "/listeFilms"})
+	public String afficherListeFilms() {
+		return "listeFilms";
+	}
+	
+//	@PostMapping("/formulaireFilms") 
+//	public String ajoutFilm(@ModelAttribute("film") Film film,
+//			@ModelAttribute("listeFilms") List<Film> listeFilms) {
+//
+//		System.out.println("dans FilmBDDServiceImpl");
+//		listeFilms.add(film);
+//		return "redirect:/listeFilms";
+//	}
+	
+	
 }

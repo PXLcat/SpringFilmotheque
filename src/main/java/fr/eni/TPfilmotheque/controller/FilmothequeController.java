@@ -43,16 +43,17 @@ public class FilmothequeController {
 		return "formulaireFilms";
 	}
 	
-//	@ModelAttribute("listeFilms") //TODO gérer entièrement dans le service
-//	public ArrayList<Film> initListeFilms() {
-//		return new ArrayList<Film>();
-//	}
+	@ModelAttribute("listeFilms") //TODO gérer entièrement dans le service
+	public ArrayList<Film> initListeFilms() {
+		return new ArrayList<Film>();
+	}
 
 	@PostMapping("/formulaireFilms") 
 	public String ajoutFilm(@ModelAttribute("film") Film film,
 			@ModelAttribute("listeFilms") List<Film> listeFilms) {
 
-		listeFilms.add(film);
+//		listeFilms.add(film);
+		filmService.ajouterFilm(film);
 		return "redirect:/listeFilms";
 	}
 

@@ -35,9 +35,9 @@ public class DonneesTestRunner {
 	 return (args) -> {
 		
 		 System.out.println("dans le runner");
-		 repository.save(new Genre("Comédie"));
-		 repository.save(new Genre("Drame"));
-		 repository.save(new Genre("Action"));
+//		 repository.save(new Genre("Comédie"));
+//		 repository.save(new Genre("Drame"));
+//		 repository.save(new Genre("Action"));
 	 
 	 
 

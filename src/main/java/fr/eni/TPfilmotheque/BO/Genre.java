@@ -33,6 +33,11 @@ public class Genre {
 		this.libelle = libelle;
 		//this.id = id;
 	}
+	
+	public Genre() {
+		super();
+
+	}
 
 	public String getLibelle() {
 		return libelle;
