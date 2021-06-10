@@ -23,6 +23,8 @@ public class FilmBDDServiceImpl implements FilmService {
 	//@ModelAttribute("listeFilms") 
 	public ArrayList<Film> initListeFilms() {
 		return new ArrayList<Film>();
+//		ArrayList<Film> liste = (ArrayList<Film>) filmRepository.findAll();
+//		return liste;
 	}
 	
 	

@@ -58,7 +58,8 @@ public class FilmothequeController {
 	}
 
 	@GetMapping({ "/", "/listeFilms"})
-	public String afficherListeFilms() {
+	public String afficherListeFilms(Model model) {
+		model.addAttribute("listeFilms", filmService.findAllFilms());
 		return "listeFilms";
 	}
 	
